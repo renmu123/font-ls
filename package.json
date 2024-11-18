@@ -2,10 +2,10 @@
   "name": "font-scanner",
   "version": "0.3.2",
   "description": "Provides access to the system font catalog",
-  "main": "build/Release/fontmanager",
+  "main": "index.js",
   "types": "index.d.ts",
   "dependencies": {
-    "node-addon-api": "^5.0.0"
+    "node-addon-api": "^8.2.2"
   },
   "devDependencies": {
     "mocha": "*"
