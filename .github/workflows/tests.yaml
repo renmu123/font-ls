@@ -1,9 +1,9 @@
 on:
-  push:
-    branches:
-      - master
-      - release/*
-  pull_request:
+  # push:
+  #   branches:
+  #     - master
+  #     - release/*
+  # pull_request:
 
 name: Run Tests
 
@@ -11,9 +11,9 @@ jobs:
   linux-tests:
     name: "Linux Tests"
     strategy:
-        matrix:
-          container: ["ubuntu:18.04"]
-          node: [14, 16]
+      matrix:
+        container: ["ubuntu:18.04"]
+        node: [14, 16]
     runs-on: ubuntu-latest
     container:
       image: ${{ matrix.container }}
@@ -41,8 +41,8 @@ jobs:
   macos-tests:
     name: "MacOS Tests"
     strategy:
-        matrix:
-          node: [14, 16]
+      matrix:
+        node: [14, 16]
     runs-on: macOS-latest
     steps:
       - uses: actions/checkout@v2
@@ -61,8 +61,8 @@ jobs:
   windows-tests:
     name: "Windows Tests"
     strategy:
-        matrix:
-          node: [14, 16]
+      matrix:
+        node: [14, 16]
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v2
