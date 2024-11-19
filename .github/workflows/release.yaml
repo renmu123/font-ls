@@ -32,10 +32,6 @@ jobs:
           node-version-file: ".node-version"
           cache: "pnpm"
 
-      - name: pnpm-update-for-win
-        if: startsWith(matrix.os, 'windows')
-        run: node ./scripts/github-ci-pnpm-update.js
-
       - name: Install dependencies
         run: pnpm install
 
