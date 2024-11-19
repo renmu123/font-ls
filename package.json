@@ -9,6 +9,7 @@
   },
   "devDependencies": {
     "mocha": "*",
+    "prebuild": "^13.0.1",
     "prebuild-install": "^7.1.2"
   },
   "directories": {
@@ -18,7 +19,8 @@
     "install": "prebuild-install || node-gyp rebuild",
     "rebuild-debug": "node-gyp rebuild --debug",
     "rebuild-release": "node-gyp rebuild",
-    "test": "mocha"
+    "test": "mocha",
+    "build": "prebuild"
   },
   "repository": {
     "type": "git",
