@@ -54,7 +54,7 @@ jobs:
       - name: Upload win artifact
         uses: actions/upload-artifact@v4
         with:
-          name: package
+          name: package-${{ runner.os }}
           path: |
             prebuilds
 
