@@ -35,8 +35,8 @@ jobs:
       - name: Install dependencies
         run: pnpm install --ignore-scripts
 
-      - run: pnpm run build -r electron -t 33.0.0 -u ${{ secrets.GITHUB_TOKEN }}
-      - run: pnpm run build -r node -t 20.0.0 -u ${{ secrets.GITHUB_TOKEN }}
+      - run: pnpm run build -r electron -t 33.0.0
+      - run: pnpm run build -r node -t 20.0.0
 
       - name: release
         if: env.is_tag == 'true'
