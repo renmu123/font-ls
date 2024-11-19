@@ -1,5 +1,5 @@
 {
-  "name": "font-scanner",
+  "name": "font-ls",
   "version": "0.3.2",
   "description": "Provides access to the system font catalog",
   "main": "index.js",
@@ -8,19 +8,21 @@
     "node-addon-api": "^8.2.2"
   },
   "devDependencies": {
-    "mocha": "*"
+    "mocha": "*",
+    "prebuild-install": "^7.1.2"
   },
   "directories": {
     "test": "test"
   },
   "scripts": {
+    "install": "prebuild-install || node-gyp rebuild",
     "rebuild-debug": "node-gyp rebuild --debug",
     "rebuild-release": "node-gyp rebuild",
     "test": "mocha"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/axosoft/font-scanner.git"
+    "url": "https://github.com/renmu123/font-scanner"
   },
   "keywords": [
     "font",
@@ -39,5 +41,5 @@
   "bugs": {
     "url": "https://github.com/axosoft/font-scanner/issues"
   },
-  "homepage": "https://github.com/axosoft/font-scanner"
+  "homepage": "https://github.com/renmu123/font-scanner"
 }
