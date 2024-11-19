@@ -33,10 +33,10 @@ jobs:
           cache: "pnpm"
 
       - name: Install dependencies
-        run: pnpm install
+        run: pnpm install --ignore-scripts
 
-      - name: build
-        run: pnpm run build
+      - run: pnpm run build -r electron -t 33.0.0 -u ${{ secrets.GITHUB_TOKEN }}
+      - run: pnpm run build -r node -t 20.0.0 -u ${{ secrets.GITHUB_TOKEN }}
 
       - name: release
         if: env.is_tag == 'true'
