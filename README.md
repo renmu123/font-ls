@@ -2,17 +2,19 @@
 
 A C++ module for Node.js providing access to the system font catalog. Forked from https://github.com/foliojs/font-manager
 
+** support prebuild**
+
 ## Features
 
-* List all available fonts
-* Find fonts with specified characteristics
-* Font substitution when characters are missing
+- List all available fonts
+- Find fonts with specified characteristics
+- Font substitution when characters are missing
 
 ## Platforms
 
-* Mac OS X 10.5 and later supported via [CoreText](https://developer.apple.com/library/mac/documentation/Carbon/reference/CoreText_Framework_Ref/_index.html)
-* Windows 7 and later supported via [DirectWrite](http://msdn.microsoft.com/en-us/library/windows/desktop/dd368038(v=vs.85).aspx)
-* Linux supported via [fontconfig](http://www.freedesktop.org/software/fontconfig)
+- Mac OS X 10.5 and later supported via [CoreText](https://developer.apple.com/library/mac/documentation/Carbon/reference/CoreText_Framework_Ref/_index.html)
+- Windows 7 and later supported via [DirectWrite](<http://msdn.microsoft.com/en-us/library/windows/desktop/dd368038(v=vs.85).aspx>)
+- Linux supported via [fontconfig](http://www.freedesktop.org/software/fontconfig)
 
 ## Installation
 
@@ -29,7 +31,7 @@ On Linux, you also may need to install the `libfontconfig-dev` package, for exam
 You load the `font-scanner` module using `require` as with all Node modules:
 
 ```javascript
-var fontManager = require('font-scanner');
+var fontManager = require("font-scanner");
 ```
 
 All of the methods exported by `font-scanner` have both synchronous and asynchronous versions available.
@@ -37,10 +39,19 @@ You should generally prefer the asynchronous version as it will allow your progr
 processing while a request for fonts is processing in the background, which may be expensive depending on
 the platform APIs that are available.
 
-* [`getAvailableFonts()`](#getavailablefonts)
-* [`findFonts(fontDescriptor)`](#findfontsfontdescriptor)
-* [`findFont(fontDescriptor)`](#findfontfontdescriptor)
-* [`substituteFont(postscriptName, text)`](#substitutefontpostscriptname-text)
+- [font-scanner](#font-scanner)
+  - [Features](#features)
+  - [Platforms](#platforms)
+  - [Installation](#installation)
+  - [API](#api)
+    - [getAvailableFonts()](#getavailablefonts)
+    - [findFonts(fontDescriptor)](#findfontsfontdescriptor)
+    - [findFont(fontDescriptor)](#findfontfontdescriptor)
+    - [substituteFont(postscriptName, text)](#substitutefontpostscriptname-text)
+    - [Font Descriptor](#font-descriptor)
+      - [Weights](#weights)
+      - [Widths](#widths)
+  - [License](#license)
 
 ### getAvailableFonts()
 
@@ -124,13 +135,14 @@ var font = fontManager.findFontSync({ family: 'Arial', weight: 700 });
 ```
 
 ### substituteFont(postscriptName, text)
+
 **NOTE: This seems to be producing unstable results on Windows at the moment when the test suite is run. Be cautious.**
 
 Substitutes the font with the given `postscriptName` with another font
-that contains the characters in `text`.  If a font matching `postscriptName`
-is not found, a font containing the given characters is still returned.  If
-a font matching `postscriptName` *is* found, its characteristics (bold, italic, etc.)
-are used to find a suitable replacement.  If the font already contains the characters
+that contains the characters in `text`. If a font matching `postscriptName`
+is not found, a font containing the given characters is still returned. If
+a font matching `postscriptName` _is_ found, its characteristics (bold, italic, etc.)
+are used to find a suitable replacement. If the font already contains the characters
 in `text`, it is not replaced and the font descriptor for the original font is returned.
 
 ```javascript
@@ -154,48 +166,48 @@ var font = fontManager.substituteFontSync('TimesNewRomanPSMT', '汉字');
 ### Font Descriptor
 
 Font descriptors are normal JavaScript objects that describe characteristics of
-a font.  They are passed to the `findFonts` and `findFont` methods and returned by
-all of the methods.  Any combination of the fields documented below can be used to
+a font. They are passed to the `findFonts` and `findFont` methods and returned by
+all of the methods. Any combination of the fields documented below can be used to
 find fonts, but all methods return full font descriptors.
 
-Name             | Type    | Description
----------------- | ------- | -----------
-`path`           | string  | The path to the font file in the filesystem. **(not applicable for queries, only for results)**
-`postscriptName` | string  | The PostScript name of the font (e.g `'Arial-BoldMT'`). This uniquely identities a font in most cases.
-`family`         | string  | The font family name (e.g `'Arial'`)
-`style`          | string  | The font style name (e.g. `'Bold'`)
-`weight`         | number  | The font weight (e.g. `400` for normal weight). Should be a multiple of 100, between 100 and 900. See [below](#weights) for weight documentation.
-`width`          | number  | The font width (e.g. `5` for normal width). Should be an integer between 1 and 9. See [below](#widths) for width documentation.
-`italic`         | boolean | Whether the font is italic or not.
-`monospace`      | boolean | Whether the font is monospace or not.
+| Name             | Type    | Description                                                                                                                                       |
+| ---------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `path`           | string  | The path to the font file in the filesystem. **(not applicable for queries, only for results)**                                                   |
+| `postscriptName` | string  | The PostScript name of the font (e.g `'Arial-BoldMT'`). This uniquely identities a font in most cases.                                            |
+| `family`         | string  | The font family name (e.g `'Arial'`)                                                                                                              |
+| `style`          | string  | The font style name (e.g. `'Bold'`)                                                                                                               |
+| `weight`         | number  | The font weight (e.g. `400` for normal weight). Should be a multiple of 100, between 100 and 900. See [below](#weights) for weight documentation. |
+| `width`          | number  | The font width (e.g. `5` for normal width). Should be an integer between 1 and 9. See [below](#widths) for width documentation.                   |
+| `italic`         | boolean | Whether the font is italic or not.                                                                                                                |
+| `monospace`      | boolean | Whether the font is monospace or not.                                                                                                             |
 
 #### Weights
 
-Value | Name
------ | -------------------------
-100   | Thin
-200   | Ultra Light
-300   | Light
-400   | Normal
-500   | Medium
-600   | Semi Bold
-700   | Bold
-800   | Ultra Bold
-900   | Heavy
+| Value | Name        |
+| ----- | ----------- |
+| 100   | Thin        |
+| 200   | Ultra Light |
+| 300   | Light       |
+| 400   | Normal      |
+| 500   | Medium      |
+| 600   | Semi Bold   |
+| 700   | Bold        |
+| 800   | Ultra Bold  |
+| 900   | Heavy       |
 
 #### Widths
 
-Value | Name
------ | -----------------------------
-1     | Ultra Condensed
-2     | Extra Condensed
-3     | Condensed
-4     | Semi Condensed
-5     | Normal
-6     | Semi Expanded
-7     | Expanded
-8     | Extra Expanded
-9     | Ultra Expanded
+| Value | Name            |
+| ----- | --------------- |
+| 1     | Ultra Condensed |
+| 2     | Extra Condensed |
+| 3     | Condensed       |
+| 4     | Semi Condensed  |
+| 5     | Normal          |
+| 6     | Semi Expanded   |
+| 7     | Expanded        |
+| 8     | Extra Expanded  |
+| 9     | Ultra Expanded  |
 
 ## License
 
