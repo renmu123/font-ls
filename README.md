@@ -2,7 +2,9 @@
 
 A C++ module for Node.js providing access to the system font catalog. Forked from https://github.com/foliojs/font-manager
 
-** support prebuild**
+## Update for this fork
+
+- **support prebuild**
 
 ## Features
 
@@ -40,6 +42,7 @@ processing while a request for fonts is processing in the background, which may 
 the platform APIs that are available.
 
 - [font-scanner](#font-scanner)
+  - [Update for this fork](#update-for-this-fork)
   - [Features](#features)
   - [Platforms](#platforms)
   - [Installation](#installation)
