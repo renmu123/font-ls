@@ -1,3 +1,8 @@
+# 0.6.0
+
+- fix electron prebuild
+- suppore node 24, electron 38 prebuild
+
 # 0.5.0
 
 1. support electron 36,37 prebuild
