@@ -1,3 +1,7 @@
+# 0.6.1
+
+- fix prebuild match
+
 # 0.6.0
 
 - fix electron prebuild
