@@ -1,3 +1,7 @@
+# 0.6.2
+
+- add electron 39 support
+
 # 0.6.1
 
 - fix prebuild match
