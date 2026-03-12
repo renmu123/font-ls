@@ -857,8 +857,8 @@ packages:
   next-tick@1.1.0:
     resolution: {integrity: sha512-CXdUiJembsNjuToQvxayPZF9Vqht7hewsvy2sOWafLvi2awflj9mOC6bHIg50orX8IJvWKY9wYQ/zB2kogPslQ==}
 
-  node-abi@3.80.0:
-    resolution: {integrity: sha512-LyPuZJcI9HVwzXK1GPxWNzrr+vr8Hp/3UqlmWxxh8p54U1ZbclOqbSog9lWHaCX+dBaiGi6n/hIX+mKu74GmPA==}
+  node-abi@3.88.0:
+    resolution: {integrity: sha512-At6b4UqIEVudaqPsXjmUO1r/N5BUr4yhDGs5PkBE8/oG5+TfLPhFechiskFsnT6Ql0VfUXbalUUCbfXxtj7K+w==}
     engines: {node: '>=10'}
 
   node-addon-api@8.5.0:
@@ -2223,7 +2223,7 @@ snapshots:
 
   next-tick@1.1.0: {}
 
-  node-abi@3.80.0:
+  node-abi@3.88.0:
     dependencies:
       semver: 7.7.1
 
@@ -2392,7 +2392,7 @@ snapshots:
       minimist: 1.2.8
       mkdirp-classic: 0.5.3
       napi-build-utils: 2.0.0
-      node-abi: 3.80.0
+      node-abi: 3.88.0
       pump: 3.0.2
       rc: 1.2.8
       simple-get: 4.0.1
@@ -2410,7 +2410,7 @@ snapshots:
       glob: 10.4.5
       minimist: 1.2.8
       napi-build-utils: 1.0.2
-      node-abi: 3.80.0
+      node-abi: 3.88.0
       node-gyp: 10.3.1
       node-ninja: 1.0.2
       noop-logger: 0.1.1
