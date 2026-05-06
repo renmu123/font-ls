@@ -1,3 +1,7 @@
+# 0.6.5
+
+- add electron 42 support
+
 # 0.6.4
 
 - add electron 41 support
