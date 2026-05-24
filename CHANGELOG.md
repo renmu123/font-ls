@@ -1,3 +1,7 @@
+# 0.6.6
+
+- add node 26 support
+
 # 0.6.5
 
 - add electron 42 support
