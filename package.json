@@ -6,7 +6,7 @@
   "types": "index.d.ts",
   "dependencies": {
     "node-addon-api": "^8.5.0",
-    "node-abi": "3.98.0"
+    "node-abi": "3.101.0"
   },
   "devDependencies": {
     "mocha": "^11.1.0",
